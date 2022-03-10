@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SYMBIAN_PROJECT</string>
+    <string name="cadastroUsuarioTitulo">CADASTRO</string>
+    <string name="txtNome">NOME</string>
+    <string name="txtSobreNome">SOBRENOME</string>
+    <string name="txtEmail">EMAIL</string>
+    <string name="txtLogin">LOGIN</string>
+    <string name="txtSenha">SENHA</string>
+    <string name="cadastrarUsuario">CADASTRAR</string>
+    <string name="Logar">LOGIN</string>
+    <string name="titulo_cadastro_usuario">CADASTRO DE USUÁRIO</string>
+    <string name="mensagem_cadastro_usuario">VOCÊ ETÁ CADASTRANDO UM USUÁRIO</string>
+    <string name="salvar">SALVAR</string>
+    <string name="cancelar">CANCELAR</string>
+</resources>

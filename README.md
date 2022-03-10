@@ -1,0 +1,2 @@
+# SYMBIAN_PROJECT
+ 
