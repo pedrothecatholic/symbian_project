@@ -1,5 +1,6 @@
 package database;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -59,12 +60,11 @@ public class SQLHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
-        sqLiteDatabase.execSQL("CREATE TABLE tbl_livro" +
-                "(cod_livro INTEGER PRIMARY KEY," +
-                " cod_usuario INTEGER," +
-                "titulo TEXT," +
-                "descricao TEXT," +
-                "foto TEXT," +
+        sqLiteDatabase.execSQL("CREATE TABLE tbl_endereco" +
+                "(cod_endereco INTEGER PRIMARY KEY," +
+                "cep INT," +
+                "numero INT," +
+                "complemento TEXT," +
                 "created_date DATETIME," +
                 "FOREIGN KEY (cod_usuario) REFERENCES tbl_usuario(cod_usuario))");
 
@@ -113,6 +113,7 @@ public class SQLHelper extends SQLiteOpenHelper {
     }
 
     /** REALIZAR LOGIN **/
+    @SuppressLint("Range")
     public int login(String login, String senha){
 
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
@@ -152,4 +153,43 @@ public class SQLHelper extends SQLiteOpenHelper {
 
     }//FIM DO MÉTODO DE LOGIN
 
+    /** INSERCAO DE ENDERECO **/
+
+    public boolean addAddress(String cep, String numero, String complemento, String created_date) {
+
+        //Configura o SQLITE para escrita:
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        int cod_endereco = 0;
+
+        try{
+
+            sqLiteDatabase.beginTransaction();
+
+            ContentValues values = new ContentValues();
+
+            values.put("cod_endereco"), cod_endereco;
+            values.put("cep", cep);
+            values.put("numero", numero);
+            values.put("complemento", complemento);
+            values.put("created_date", created_date);
+
+            sqLiteDatabase.insertOrThrow("tbl_livro", null,values);
+            sqLiteDatabase.setTransactionSuccessful();
+
+            return true;
+
+        }catch(Exception e){
+
+            Log.d("SQLITE-", e.getMessage());
+            return false;
+
+        }finally{
+
+            if(sqLiteDatabase.isOpen()){
+                sqLiteDatabase.endTransaction();
+            }
+
+        }
+
+    }
 }//FECHAMENTO DA CLASSE

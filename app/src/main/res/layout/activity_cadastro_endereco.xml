@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/cadastroUsuarioTitulo"
+            android:text="@string/cadastroEnderecoTitulo"
             style="@style/textTitulo"/>
 
         <EditText
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtNome"
             android:inputType="text"
-            android:hint="@string/txtNome"/>
+            android:hint="@string/txtCep"/>
 
         <EditText
             style="@style/editText"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtSobrenome"
             android:inputType="text"
-            android:hint="@string/txtSobreNome"/>
+            android:hint="@string/txtNumero"/>
 
         <EditText
             style="@style/editText"
@@ -42,28 +42,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtEmail"
             android:inputType="textEmailAddress"
-            android:hint="@string/txtEmail"/>
-
-        <EditText
-            style="@style/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtLogin"
-            android:inputType="text"
-            android:hint="@string/txtLogin"/>
-
-        <EditText
-            style="@style/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtSenha"
-            android:inputType="textPassword"
-            android:hint="@string/txtSenha"/>
+            android:hint="@string/txtComplemento"/>
 
         <Button
             style="@style/btnForm"
-            android:id="@+id/btnCadastrarUsuario"
-            android:text="@string/cadastrarUsuario"
+            android:id="@+id/btnCadastrarEndereco"
+            android:text="@string/cadastrarEndereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
